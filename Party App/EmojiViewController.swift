@@ -14,13 +14,16 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet var mainView: UIView!
     @IBOutlet var collectionView: UICollectionView!
     
+    var faces = ["jamesface", "yjface"]
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return faces.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ImageCollectionViewCell
         
+        cell.faceImageView.image = UIImage(named: "\(faces[indexPath.item])")
         return cell
     }
     override func viewDidLoad() {
