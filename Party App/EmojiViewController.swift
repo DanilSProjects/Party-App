@@ -13,7 +13,9 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     @IBOutlet var mainView: UIView!
     @IBOutlet var collectionView: UICollectionView!
-    
+    var animator: UIDynamicAnimator!
+    var collisions: UICollisionBehavior!
+    var dynamics: UIDynamicItemBehavior!
     var faces = ["jamesface", "yjface"]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -38,10 +40,29 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         let image = UIImageView(frame: CGRect(x: xPos, y: yPos, width: 85, height: 85))
         image.image = UIImage(named: "\(face)")
+
         mainView.addSubview(image)
+        collisions.addItem(image)
+        dynamics.addItem(image)
+        
+        let push = UIPushBehavior(items: [image], mode: .instantaneous)
+        push.angle = 2 * CGFloat(drand48() * Double.pi)
+        push.magnitude = 1.0 + CGFloat(drand48() * 2)
+        animator.addBehavior(push)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        animator = UIDynamicAnimator(referenceView: mainView)
+        
+        collisions = UICollisionBehavior(items: [])
+        collisions.translatesReferenceBoundsIntoBoundary = true
+        animator.addBehavior(collisions)
+        
+        dynamics = UIDynamicItemBehavior(items: [])
+        dynamics.elasticity = 1.0
+        dynamics.resistance = 0
+        
+        animator.addBehavior(dynamics)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
