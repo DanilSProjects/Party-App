@@ -29,7 +29,13 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let face = faces[indexPath.item]
-        let image = UIImageView(frame: CGRect(x: 100, y: 100, width: 80, height: 80))
+        var xPos = CGFloat()
+        var yPos = CGFloat()
+        
+        xPos = CGFloat(arc4random_uniform(UInt32((self.mainView?.frame.size.width)!)))
+        yPos = CGFloat(arc4random_uniform(UInt32((self.mainView?.frame.size.height)!)))
+        
+        let image = UIImageView(frame: CGRect(x: xPos, y: yPos, width: 80, height: 80))
         image.image = UIImage(named: "\(face)")
         mainView.addSubview(image)
     }
