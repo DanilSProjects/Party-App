@@ -26,6 +26,13 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         cell.faceImageView.image = UIImage(named: "\(faces[indexPath.item])")
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let face = faces[indexPath.item]
+        let image = UIImageView(frame: CGRect(x: 100, y: 100, width: 80, height: 80))
+        image.image = UIImage(named: "\(face)")
+        mainView.addSubview(image)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
