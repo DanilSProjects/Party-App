@@ -32,11 +32,11 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         var xPos = CGFloat()
         var yPos = CGFloat()
         
-        xPos = CGFloat(arc4random_uniform(UInt32(mainView.frame.width) - 80))
-        yPos = CGFloat(arc4random_uniform(UInt32(mainView.frame.height) - 82))
+        xPos = CGFloat(arc4random_uniform(UInt32(mainView.frame.width) - 85))
+        yPos = CGFloat(arc4random_uniform(UInt32(mainView.frame.height) - 85))
         
         
-        let image = UIImageView(frame: CGRect(x: xPos, y: yPos, width: 100, height: 100))
+        let image = UIImageView(frame: CGRect(x: xPos, y: yPos, width: 85, height: 85))
         image.image = UIImage(named: "\(face)")
         mainView.addSubview(image)
     }
