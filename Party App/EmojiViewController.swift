@@ -9,7 +9,7 @@
 import UIKit
 private let reuseIdentifier = "Cell"
 
-class EmojiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class EmojiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollisionBehaviorDelegate {
 
     @IBOutlet var mainView: UIView!
     @IBOutlet var collectionView: UICollectionView!
@@ -56,6 +56,7 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         collisions = UICollisionBehavior(items: [])
         collisions.translatesReferenceBoundsIntoBoundary = true
+        collisions.collisionDelegate = self
         animator.addBehavior(collisions)
         
         dynamics = UIDynamicItemBehavior(items: [])
@@ -70,7 +71,11 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item1: UIDynamicItem, with item2: UIDynamicItem, at p: CGPoint) {
+        print("Sir, it appears that you have knocked into my enormous head! I apologise sincerely.")
+    }
 
 }
 
