@@ -49,6 +49,10 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         push.angle = 2 * CGFloat(drand48() * Double.pi)
         push.magnitude = 1.0 + CGFloat(drand48() * 2)
         animator.addBehavior(push)
+        
+        UIView.animate(withDuration: 3, delay: 0, options: [.repeat, .autoreverse], animations: {
+            image.transform = CGAffineTransform(scaleX: 2, y: 2)
+        }, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +68,8 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         dynamics.resistance = 0
         
         animator.addBehavior(dynamics)
+        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
