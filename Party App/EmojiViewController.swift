@@ -16,7 +16,7 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     var animator: UIDynamicAnimator!
     var collisions: UICollisionBehavior!
     var dynamics: UIDynamicItemBehavior!
-    var faces = ["jamesface", "yjface"]
+    var faces = ["jamesface", "yjface", "harold", "gran", "obama", "trump"]
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return faces.count
