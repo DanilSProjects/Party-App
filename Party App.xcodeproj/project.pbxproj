@@ -13,6 +13,7 @@
 		65148B6B210BFBCA000815A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65148B6A210BFBCA000815A4 /* Assets.xcassets */; };
 		65148B6E210BFBCA000815A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65148B6C210BFBCA000815A4 /* LaunchScreen.storyboard */; };
 		65148B76210C0261000815A4 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65148B75210C0261000815A4 /* ImageCollectionViewCell.swift */; };
+		6596D333210F43B700A9CEFA /* oof.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6596D332210F43B700A9CEFA /* oof.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		65148B6D210BFBCA000815A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65148B6F210BFBCA000815A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65148B75210C0261000815A4 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		6596D332210F43B700A9CEFA /* oof.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = oof.mp3; path = ../../../Downloads/oof.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				65148B63210BFBC9000815A4 /* AppDelegate.swift */,
 				65148B65210BFBC9000815A4 /* EmojiViewController.swift */,
 				65148B67210BFBC9000815A4 /* Main.storyboard */,
+				6596D332210F43B700A9CEFA /* oof.mp3 */,
 				65148B75210C0261000815A4 /* ImageCollectionViewCell.swift */,
 				65148B6A210BFBCA000815A4 /* Assets.xcassets */,
 				65148B6C210BFBCA000815A4 /* LaunchScreen.storyboard */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65148B6E210BFBCA000815A4 /* LaunchScreen.storyboard in Resources */,
+				6596D333210F43B700A9CEFA /* oof.mp3 in Resources */,
 				65148B6B210BFBCA000815A4 /* Assets.xcassets in Resources */,
 				65148B69210BFBC9000815A4 /* Main.storyboard in Resources */,
 			);

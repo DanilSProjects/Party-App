@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVFoundation
+
 private let reuseIdentifier = "Cell"
 
 class EmojiViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollisionBehaviorDelegate {
@@ -17,6 +19,7 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     var collisions: UICollisionBehavior!
     var dynamics: UIDynamicItemBehavior!
     var faces = ["jamesface", "yjface", "harold", "gran", "obama", "trump"]
+    var soundPlayer: AVAudioPlayer!
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return faces.count
@@ -56,6 +59,7 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        playBackgroundMusic(filename: "loadFuncFirst")
         animator = UIDynamicAnimator(referenceView: mainView)
         
         collisions = UICollisionBehavior(items: [])
@@ -78,9 +82,24 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         // Dispose of any resources that can be recreated.
     }
     
+    func playBackgroundMusic(filename: String) {
+        let url = Bundle.main.url(forResource: filename, withExtension: nil)
+        guard let newURL = url else {
+            print("Could not find file: \(filename)")
+            return
+        }
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: newURL)
+            soundPlayer.numberOfLoops = 0
+            soundPlayer.prepareToPlay()
+            soundPlayer.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
+    }
     
     func collisionBehavior(_ behavior: UICollisionBehavior, beganContactFor item1: UIDynamicItem, with item2: UIDynamicItem, at p: CGPoint) {
-        print("Sir, it appears that you have knocked into my enormous head! I apologise sincerely.")
+        playBackgroundMusic(filename: "oof.mp3")
     }
 
 }
