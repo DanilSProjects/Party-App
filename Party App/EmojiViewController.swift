@@ -56,6 +56,17 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         UIView.animate(withDuration: 3, delay: 0, options: [.repeat, .autoreverse], animations: {
             image.transform = CGAffineTransform(scaleX: 2, y: 2)
         }, completion: nil)
+        
+        Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { (timer) in
+            UIView.animate(withDuration: 5, animations: {
+                image.alpha = 0
+            }, completion: { (_) in
+                image.removeFromSuperview()
+                push.removeItem(image)
+                self.dynamics.removeItem(image)
+                self.collisions.removeItem(image)
+            })
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
