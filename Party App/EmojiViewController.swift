@@ -59,7 +59,6 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        playBackgroundMusic(filename: "loadFuncFirst")
         animator = UIDynamicAnimator(referenceView: mainView)
         
         collisions = UICollisionBehavior(items: [])
