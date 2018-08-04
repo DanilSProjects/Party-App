@@ -68,7 +68,7 @@
                                     <outlet property="facesImageView" destination="Kvm-LI-Uwn" id="6jI-rq-vW4"/>
                                     <outlet property="outlineView" destination="zDr-Jm-97C" id="VbB-Kt-SiG"/>
                                     <outlet property="titleLabel" destination="xBB-07-UFP" id="0lS-DO-LsP"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="MU4-cU-iMG"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="chooseTheme" id="MU4-cU-iMG"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

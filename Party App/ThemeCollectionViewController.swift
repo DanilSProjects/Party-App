@@ -15,12 +15,13 @@ class ThemeCollectionViewController: UICollectionViewController, UICollectionVie
     struct FaceTheme {
         var title: String
         var themeImage: String
+        var faces: [String]
     }
     
     let faceThemes = [
-        FaceTheme(title: "Tinkertanker", themeImage: "tinkertanker"),
-        FaceTheme(title: "Presidents", themeImage: "presidents"),
-        FaceTheme(title: "Elderly", themeImage: "elderly")
+        FaceTheme(title: "Tinkertanker", themeImage: "tinkertanker", faces: ["yjface", "jamesface"]),
+        FaceTheme(title: "Presidents", themeImage: "presidents", faces: ["trump", "obama"]),
+        FaceTheme(title: "Elderly", themeImage: "elderly", faces: ["harold", "gran"])
                        ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,15 +38,27 @@ class ThemeCollectionViewController: UICollectionViewController, UICollectionVie
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "chooseTheme" {
+            let destination = segue.destination as! EmojiViewController
+            // Worse method
+    /*        let selectedIndexPath = collectionView?.indexPathsForSelectedItems?[0]
+            destination.faces = faceThemes[(selectedIndexPath?.item)!].faces */
+            
+            // Better method
+            if let cell = sender as? ThemeCollectionViewCell {
+                if let indexPath = collectionView?.indexPath(for: cell) {
+                    destination.faces = faceThemes[indexPath.item].faces
+                }
+            }
+        }
     }
-    */
+ 
 
     // MARK: UICollectionViewDataSource
 
@@ -66,7 +79,10 @@ class ThemeCollectionViewController: UICollectionViewController, UICollectionVie
         cell.titleLabel.text = faceThemes[indexPath.item].title
         
         cell.facesImageView.image = UIImage(named: faceThemes[indexPath.item].themeImage)
-    
+
+        cell.outlineView.layer.shadowColor = UIColor.black.cgColor
+        cell.outlineView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        
         return cell
     }
 
