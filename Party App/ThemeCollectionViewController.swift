@@ -82,6 +82,9 @@ class ThemeCollectionViewController: UICollectionViewController, UICollectionVie
 
         cell.outlineView.layer.shadowColor = UIColor.black.cgColor
         cell.outlineView.layer.shadowOffset = CGSize(width: 0, height: 2)
+        cell.outlineView.layer.shadowOpacity = 0.5
+        cell.outlineView.layer.shadowRadius = 8
+        cell.outlineView.layer.cornerRadius = 20
         
         return cell
     }
