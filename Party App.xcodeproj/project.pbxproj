@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6503F0DD21153F2E0045BDF5 /* ThemeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6503F0DC21153F2E0045BDF5 /* ThemeCollectionViewController.swift */; };
+		6503F0DF21153F470045BDF5 /* ThemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6503F0DE21153F470045BDF5 /* ThemeCollectionViewCell.swift */; };
 		65148B64210BFBC9000815A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65148B63210BFBC9000815A4 /* AppDelegate.swift */; };
 		65148B66210BFBC9000815A4 /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65148B65210BFBC9000815A4 /* EmojiViewController.swift */; };
 		65148B69210BFBC9000815A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65148B67210BFBC9000815A4 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6503F0DC21153F2E0045BDF5 /* ThemeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewController.swift; sourceTree = "<group>"; };
+		6503F0DE21153F470045BDF5 /* ThemeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		65148B60210BFBC9000815A4 /* Party App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Party App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65148B63210BFBC9000815A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65148B65210BFBC9000815A4 /* EmojiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 				65148B63210BFBC9000815A4 /* AppDelegate.swift */,
 				65148B65210BFBC9000815A4 /* EmojiViewController.swift */,
 				65148B67210BFBC9000815A4 /* Main.storyboard */,
+				6503F0DE21153F470045BDF5 /* ThemeCollectionViewCell.swift */,
+				6503F0DC21153F2E0045BDF5 /* ThemeCollectionViewController.swift */,
 				6596D332210F43B700A9CEFA /* oof.mp3 */,
 				65148B75210C0261000815A4 /* ImageCollectionViewCell.swift */,
 				65148B6A210BFBCA000815A4 /* Assets.xcassets */,
@@ -142,8 +148,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6503F0DD21153F2E0045BDF5 /* ThemeCollectionViewController.swift in Sources */,
 				65148B76210C0261000815A4 /* ImageCollectionViewCell.swift in Sources */,
 				65148B66210BFBC9000815A4 /* EmojiViewController.swift in Sources */,
+				6503F0DF21153F470045BDF5 /* ThemeCollectionViewCell.swift in Sources */,
 				65148B64210BFBC9000815A4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

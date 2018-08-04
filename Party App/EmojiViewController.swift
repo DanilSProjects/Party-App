@@ -53,6 +53,7 @@ class EmojiViewController: UIViewController, UICollectionViewDataSource, UIColle
         push.magnitude = 1.0 + CGFloat(drand48() * 2)
         animator.addBehavior(push)
         
+
         UIView.animate(withDuration: 3, delay: 0, options: [.repeat, .autoreverse], animations: {
             image.transform = CGAffineTransform(scaleX: 2, y: 2)
         }, completion: nil)
